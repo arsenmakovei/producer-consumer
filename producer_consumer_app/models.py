@@ -9,7 +9,7 @@ class Employee(AbstractUser):
 
 
 class Order(models.Model):
-    task_id = models.IntegerField()
+    task_id = models.CharField(max_length=63)
     name = models.CharField(max_length=63)
     description = models.TextField(max_length=255)
     employee = models.ForeignKey(

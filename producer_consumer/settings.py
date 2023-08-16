@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 
+from django.urls import reverse_lazy
 from dotenv import load_dotenv
 
 
@@ -47,6 +48,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "debug_toolbar",
+    "crispy_forms",
+    "crispy_bootstrap4",
     "producer_consumer_app",
 ]
 
@@ -78,6 +81,10 @@ TEMPLATES = [
         },
     },
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 WSGI_APPLICATION = "producer_consumer.wsgi.application"
 
@@ -117,6 +124,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 AUTH_USER_MODEL = "producer_consumer_app.Employee"
 
+LOGIN_REDIRECT_URL = reverse_lazy("producer_consumer_app:order-list")
+LOGOUT_REDIRECT_URL = reverse_lazy("login")
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
