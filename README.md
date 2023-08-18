@@ -56,3 +56,14 @@ Docker should be installed and running
 ```shell
 docker-compose up --build
 ```
+
+## Demo
+
+Log-in page:
+![Log-in page](login.png)
+
+Sign-up page:
+![Sign-up page](signup.png)
+
+Orders page:
+![Orders page](orders.png)
