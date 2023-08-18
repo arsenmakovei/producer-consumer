@@ -19,7 +19,7 @@
             </thead>
           {% for order in order_list %}
             <tr>
-              <td>{{ order.name }} {{ order.task_id }}</td>
+              <td><a href="{% url 'producer_consumer_app:order-detail' pk=order.id%}">{{ order.name }} {{ order.task_id }}</a></td>
               <td>{{ order.employee }}</td>
               <td><a href="{% url 'producer_consumer_app:order-delete' pk=order.id%}">🗑️</a></td>
             </tr>

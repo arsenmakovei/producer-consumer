@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container mt-4">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <h1>Order: {{ order.name }} {{ order.task_id }}</h1>
+        <p>
+          <strong>Description:</strong> {{ order.description }}<br>
+          <strong>Employee:</strong> {{ order.employee }}
+        </p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

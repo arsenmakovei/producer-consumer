@@ -48,3 +48,11 @@ class OrderDeleteView(LoginRequiredMixin, generic.DeleteView):
             send_telegram_message(message)
 
         return response
+
+
+class OrderDetailView(generic.DetailView):
+    model = Order
+
+
+class EmployeeDetailView(generic.DetailView):
+    model = Employee
