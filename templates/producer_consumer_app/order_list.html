@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <h1 class="mt-4">
+          Order List
+        </h1>
+
+        {% if order_list %}
+          <table class="table table-hover table-bordered mt-4">
+            <thead class="thead-dark">
+              <tr>
+                <th>Order Name</th>
+                <th>Employee</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+          {% for order in order_list %}
+            <tr>
+              <td><a href="{% url 'producer_consumer_app:order-detail' pk=order.id%}">{{ order.name }} {{ order.task_id }}</a></td>
+              <td>{{ order.employee }}</td>
+              <td><a href="{% url 'producer_consumer_app:order-delete' pk=order.id%}">🗑️</a></td>
+            </tr>
+          {% endfor %}
+          </table>
+
+        {% else %}
+          <p>You have no orders</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

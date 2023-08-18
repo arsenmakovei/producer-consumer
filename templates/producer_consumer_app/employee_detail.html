@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container mt-4">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <h1>Employee: {{ employee.username }}</h1>
+        <p>
+          <strong>Full Name:</strong> {{ employee.first_name }} {{ employee.last_name }}<br>
+          <strong>Probation:</strong> {{ employee.probation }}<br>
+          <strong>Position:</strong> {{ employee.position }}
+        </p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
